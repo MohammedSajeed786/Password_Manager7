@@ -13,6 +13,8 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/passwords", require("./routes/passwords"));
 
 if (process.env.NODE_ENV == "production") {
+  
+  
   app.use(express.static("frontend/build"));
 }
 
