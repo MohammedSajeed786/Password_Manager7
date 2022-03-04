@@ -39,7 +39,7 @@ export default function Login() {
         }), // body data type must match "Content-Type" header
       });
       const json = await response.json();
-      console.log(json);
+      //console.log(json);
       if (json.success) {
         localStorage.setItem("token", json.authtoken);
         navigate("/");
@@ -72,7 +72,7 @@ export default function Login() {
     // console.log("pass");
     if (hidePassword === true) sethidePassword(false);
     else sethidePassword(true);
-    console.log(hidePassword);
+    //console.log(hidePassword);
   };
   // return (
   //   <div className="container">

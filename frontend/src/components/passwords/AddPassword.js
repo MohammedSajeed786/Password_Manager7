@@ -14,17 +14,17 @@ export default function AddPassword() {
     password: "",
   });
   const inputChange = (e) => {
-    // console.log("hello")
-    // console.log(e.target.name,e.target.value);
+    // //console.log("hello")
+    // //console.log(e.target.name,e.target.value);
     setpassword({ ...password, [e.target.name]: e.target.value });
   };
   const createPassword = (e) => {
-    // console.log(password);
+    // //console.log(password);
     if (!disable()) {
       e.preventDefault();
       let key="iamaboy";
       let enc=AES.encrypt(password.password,key).toString();
-      // console.log(enc);
+      // //console.log(enc);
       addPassword(password.platform, enc, password.email);
       setpassword({ platform: "", email: "", password: "" });
       showAlert("Password Added", "success");
@@ -51,10 +51,10 @@ export default function AddPassword() {
   const [hidePassword, sethidePassword] = useState(true);
   const handlePassword = (e) => {
     //  e.preventDefault();
-    // console.log("pass");
+    // //console.log("pass");
     if (hidePassword === true) sethidePassword(false);
     else sethidePassword(true);
-    console.log(hidePassword);
+    //console.log(hidePassword);
   };
   return (
     <div style={{marginLeft:"3em"}}>

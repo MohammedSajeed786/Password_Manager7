@@ -41,7 +41,7 @@ export default function () {
         }
       );
       const json = await response.json();
-      console.log(json);
+      //console.log(json);
       if (json.success) {
         localStorage.setItem("token", json.authtoken);
         navigate("/");
@@ -51,10 +51,10 @@ export default function () {
       }
     }
     e.preventDefault();
-    console.log(credentials);
+    //console.log(credentials);
   };
   const disable = () => {
-    //console.log("disable")
+    ////console.log("disable")
     if (credentials.name.length < 1){  showAlert("name must be atleat 1 character", "info");return true;}
     if (credentials.password.length < 8) {
       showAlert("password must be atleat 8 characters", "info");
@@ -75,10 +75,10 @@ export default function () {
   const [hidePassword, sethidePassword] = useState(true);
   const handlePassword = (e) => {
     //  e.preventDefault();
-    // console.log("pass");
+    // //console.log("pass");
     if (hidePassword === true) sethidePassword(false);
     else sethidePassword(true);
-    console.log(hidePassword);
+    //console.log(hidePassword);
   };
   // return (
   //   <div className="container">

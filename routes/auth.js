@@ -25,11 +25,11 @@ router.post(
   ],
   async (req, res) => {
     let success=false;
-    console.log(req.body);
+    ////////////console.log(req.body);
     //validating all credentials
     const errors = validationResult(req);
-    console.log("hello");
-    console.log(req);
+    ////////////console.log("hello");
+    ////////////console.log(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ success:success,errors: errors.array() });
     }
@@ -60,7 +60,7 @@ router.post(
       //jwt token
       var jwt_secret = "iamagoodboy";
       var authtoken = jwt.sign(data, jwt_secret);
-      console.log(authtoken);
+      ////////////console.log(authtoken);
       success=true;
       res.json({ success:success,authtoken });
     } catch (err) {
@@ -110,7 +110,7 @@ router.post(
       //jwt token
       var jwt_secret = "iamagoodboy";
       var authtoken = jwt.sign(data, jwt_secret);
-      console.log(authtoken);
+      ////////////console.log(authtoken);
       success=true;
       res.json({ success:success,authtoken });
     } catch (err) {

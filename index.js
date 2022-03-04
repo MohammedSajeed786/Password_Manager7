@@ -19,6 +19,6 @@ if (process.env.NODE_ENV == "production") {
 }
 
 app.listen(port, () => {
-  console.log(`Password Manager listening on port ${port}`);
+  // console.log(`Password Manager listening on port ${port}`);
 });
 //5689nk2022

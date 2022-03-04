@@ -9,7 +9,7 @@ export default function Navbar() {
   const location = useLocation();
   let navigate = useNavigate();
   useEffect(() => {
-    //  console.log(location.pathname);
+    //  //console.log(location.pathname);
   }, [location]);
   const logout = () => {
     navigate("/login");

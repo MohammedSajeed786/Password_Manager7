@@ -15,7 +15,7 @@ export default function Passwords() {
   let { showAlert } = alertContext;
   const passwordContext = useContext(PasswordContext);
   let { passwords, fetchPasswords, updatePassword } = passwordContext;
-  console.log("render");
+  //console.log("render");
 
   //runs only once because array is empty and empty array doesn't change
   // case 1:- no second arg:- runs each time after render==infinite loop of useeffect
@@ -29,9 +29,9 @@ export default function Passwords() {
   //useref is used which will not rerender
   let navigate = useNavigate();
   useEffect(() => {
-    //console.log("run hogaya");
+    ////console.log("run hogaya");
 
-    console.log(localStorage.getItem("token"));
+    //console.log(localStorage.getItem("token"));
     if (localStorage.getItem("token")) {
       fetchPasswords();
     } else {
@@ -51,11 +51,11 @@ export default function Passwords() {
   const close = useRef(null);
   let key = "iamaboy";
   const toggleUpdate = (originalPassword) => {
-    // console.log(originalPassword);
+    // //console.log(originalPassword);
 
     ref.current.click();
     let decr = AES.decrypt(originalPassword.password, key).toString(enc);
-    console.log(decr);
+    //console.log(decr);
     setpassword({
       email: originalPassword.email,
       password: decr,
@@ -65,15 +65,15 @@ export default function Passwords() {
   };
 
   const inputChange = (e) => {
-    // console.log("hello")
-    // console.log(e.target.name,e.target.value);
+    // //console.log("hello")
+    // //console.log(e.target.name,e.target.value);
     setpassword({ ...password, [e.target.name]: e.target.value });
   };
 
   const update = () => {
-    console.log(password);
+    //console.log(password);
     let enc=AES.encrypt(password.password, key).toString();
-    console.log(enc);
+    //console.log(enc);
     updatePassword(
       password._id,
       password.platform,
